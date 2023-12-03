@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 class Input extends StatelessWidget {
   final String hint;
   final IconData inputIcon;
+  final TextInputType keyType;
 
-  const Input({super.key, required this.hint, required this.inputIcon});
+  const Input({
+    super.key,
+    required this.hint,
+    required this.inputIcon,
+    required this.keyType,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +21,7 @@ class Input extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
       ),
       child: TextField(
+        keyboardType: keyType,
         decoration: InputDecoration(
             border: InputBorder.none,
             hintText: hint,
